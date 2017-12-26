@@ -8,8 +8,13 @@ namespace SingleHttpPageServer
 {
 	class Program
 	{
+		internal static SimpleHttpServer Server;
+
 		static void Main(string[] args)
 		{
+			Configuration c = new Configuration();
+			c.ConfigType = Configuration.ConfigurationType.Memory;
+
 		}
 	}
 }
