@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SingleHttpPageServer
 {
-	class Program
+	public static class Program
 	{
-		internal static SimpleHttpServer Server;
+		private static SimpleHttpServer _server;
 
-		static void Main(string[] args)
+		public static void Main(String[] args)
 		{
-			Configuration c = new Configuration();
-			c.ConfigType = Configuration.ConfigurationType.Memory;
-
+			String configFile = args.Length == 0 ? "config.json" : args[0];
+			Configuration c = Configuration.Load(Configuration.ConfigurationType.JsonFile, configFile);
+			_server = new SimpleHttpServer(c);
+			_server.Start();
 		}
 	}
 }

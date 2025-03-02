@@ -14,7 +14,7 @@ namespace SingleHttpPageServer
 
 		public int ResponseCode = 200;
 
-		public Dictionary<String, List<String>> FileMappings = new Dictionary<String, List<string>>();
+		public Dictionary<String, List<String>> FileMappings = new Dictionary<String, List<String>>();
 
 		public bool MacrosEnabled = true;
 

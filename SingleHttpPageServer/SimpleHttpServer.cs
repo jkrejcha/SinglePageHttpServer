@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SingleHttpPageServer
 {
@@ -15,11 +13,16 @@ namespace SingleHttpPageServer
 		/// File to byte mappings. Multiple files can be served by the same name.
 		/// Names are case-insensitive.
 		/// </summary>
-		private Dictionary<List<String>, byte[]> Cache = new Dictionary<List<string>, byte[]>();
+		private Dictionary<List<String>, Byte[]> Cache = new Dictionary<List<String>, Byte[]>();
 
-		private byte[] DefaultFile;
+		private Byte[] DefaultFile;
 
 		public bool Running { get; private set; }
+
+		public SimpleHttpServer(Configuration config)
+		{
+			Config = config;
+		}
 
 		/// <summary>
 		/// Start the server loop.
